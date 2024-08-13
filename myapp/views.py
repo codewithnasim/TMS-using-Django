@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
-from .models import Users,Proffesional,Servicesreq
+from .models import Usr,Proffesional,Servicesreq
 from django.http import HttpResponse
-from django.contrib.auth import authenticate,login
+# from django.contrib.auth import authenticate,login
 # import requests
 
 
@@ -16,7 +16,7 @@ def Userreg(request):
         password=request.POST.get("password")
         
 
-        details = Users(name=name,address=address,email=email,phone=phonenumber,password=password)
+        details = Usr(name=name,address=address,email=email,phone=phonenumber,password=password)
         
         details.save()
         return redirect("../login")
@@ -29,7 +29,7 @@ def prof(request):
         address = request.POST.get("address")
         email = request.POST.get("email")
         phone = request.POST.get("phone")
-        # dob=request.POST.get("dob")
+        
         qualification=request.POST.get("qualification")
         work_experiece=request.POST.get("work")
         password=request.POST.get("password")
@@ -61,7 +61,7 @@ def login(request):
         #user = authenticate(request,email=email,password=password)
         # print(email,password)
         try:
-            if Users.objects.filter(email=email,password=password):
+            if Usr.objects.filter(email=email,password=password):
                 #login(request,user)
                 return redirect("../afterlogin")
             else:

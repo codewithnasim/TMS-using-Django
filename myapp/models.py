@@ -2,15 +2,14 @@ from django.db import models
 # from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
-class Users(models.Model):
+class Usr(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     address = models.TextField(max_length=100)
     phone = models.IntegerField()
     password = models.CharField(max_length=100)
-
     class Meta:
-        db_table="user_details"
+        db_table="Usr_details"
 
 class Proffesional(models.Model):
     name = models.CharField(max_length=100)
@@ -18,12 +17,11 @@ class Proffesional(models.Model):
     address = models.TextField(max_length=100)
     phone = models.IntegerField()
     qualification=models.CharField(max_length=100)
-    # dob=models.DateField()
     work_experiece=models.CharField(max_length=100)
     password = models.CharField(max_length=100)
 
     class Meta:
-        db_table="proffesional_details"
+        db_table="proffesional_detail"
 
 
 class Servicesreq(models.Model):
@@ -35,4 +33,4 @@ class Servicesreq(models.Model):
     technician = models.CharField(max_length=100)
     # technician_mobile=models.IntegerField()
     class Meta:
-        db_table="service_details"
+        db_table="service_detail"

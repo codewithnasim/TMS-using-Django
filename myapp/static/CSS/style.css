@@ -51,9 +51,9 @@ html {
 }
 
 #navbar ul {
-  /* font-family: 'Baloo Bhai', cursive; */
-  /* font-family: 'Baloo Bhai 2', cursive; */
-  font-family: 'Inter', sans-serif;
+  font-family: 'Baloo Bhai', cursive; 
+  /* font-family: 'Baloo Bhai 2', cursive;  */
+  /* font-family: 'Inter', sans-serif; */
   display: flex;
 }
 
@@ -115,7 +115,7 @@ html {
 
 #home::before {
   content: "";
-  background: url(/static/images/home.avif);
+  background: url('/static/images/home.avif');
   position: absolute;
   top: 0px;
   left: 0px;
